@@ -115,13 +115,13 @@
 
         .links-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr;  /* Single column on mobile */
             gap: 1rem;
-            margin-top: 2rem; /* Space above buttons */
+            margin-top: 2rem;
         }
 
         .links-grid a {
-            min-height: 60px; /* Forces equal height */
+            min-height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,10 +133,10 @@
 
         @media (min-width: 600px) {
             .links-grid {
-                grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+                grid-template-columns: 1fr 1fr; /* Two columns on desktop */
             }
         }
-
+        
         .footer {
             text-align: center;
             padding: 2rem 1rem;
