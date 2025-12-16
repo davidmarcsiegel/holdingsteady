@@ -30,7 +30,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0;
+            padding: 0 1rem;
         }
         
         .flyer-container {
@@ -46,7 +46,7 @@
             display: block;
             margin: 0 auto;
         }
-        
+
         .description {
             background: white;
             padding: 2rem;
@@ -55,6 +55,8 @@
             margin-bottom: 2rem;
             font-size: 1.05rem;
             line-height: 1.7;
+            max-width: 960px;
+            margin: 0 auto 2rem;
         }
         
         .links {
@@ -63,6 +65,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
+            max-width: 960px;
+            margin: 0 auto 2rem;
         }
         
         .links a {
@@ -86,6 +90,25 @@
             margin-bottom: 0;
         }
         
+        .links a.primary {
+            background: #4A7C8C;
+        }
+
+        .links a.primary:hover {
+            background: #3a6273;
+        }
+
+        /* Secondary buttons: softer, less severe */
+        .links a.secondary {
+            background: #e9f0f2;
+            color: #2f4f5a;
+            border: 1px solid #c8d7dc;
+        }
+
+        .links a.secondary:hover {
+            background: #dde8ec;
+        }
+
         .footer {
             text-align: center;
             padding: 2rem 1rem;
@@ -149,9 +172,9 @@
         </div>
         
         <div class="links">
-            <a href="https://forms.google.com">📝 Sign up for more information</a>
-            <a href="https://www.laurenfinkelsteintherapy.com">👤 About Lauren Finkelstein, LMFT</a>
-            <a href="https://lrossitherapy.com">👤 About Letizia Rossi, LCSW</a>
+            <a class="primary" href="https://forms.google.com">📝 Sign up for more information</a>
+            <a class="secondary" href="https://www.laurenfinkelsteintherapy.com">👤 About Lauren Finkelstein, LMFT</a>
+            <a class="secondary" href="https://lrossitherapy.com">👤 About Letizia Rossi, LCSW</a>
         </div>
         
         <div class="footer">
