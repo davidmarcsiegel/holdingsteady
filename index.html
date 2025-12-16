@@ -131,7 +131,7 @@
                  class="flyer-image"
                  usemap="#flyermap">
             
-            <map name="flyermap">
+            <map name="image-map">
                 <area target="_self" alt="Sign Up Form" title="Sign Up Form" href="https://forms.google.com" coords="908,1009,209,610" shape="rect">
                 <area target="_self" alt="Sign Up Form" title="Sign Up Form" href="https://forms.google.com" coords="1362,946,2219,1311" shape="rect">
                 <area target="_self" alt="Sign Up Form" title="Sign Up Form" href="https://forms.google.com" coords="723,1519,1658,1809" shape="rect">
@@ -158,5 +158,61 @@
             Lauren Finkelstein, LMFT & Letizia Rossi, LCSW
         </div>
     </div>
+    
+    <script>
+        // Responsive image map script
+        // This makes the clickable areas scale with the image
+        (function() {
+            function resizeMap() {
+                const img = document.querySelector('img[usemap]');
+                const map = document.querySelector('map[name="flyermap"]');
+                
+                if (!img || !map) return;
+                
+                // Get natural (original) dimensions
+                const naturalWidth = img.naturalWidth;
+                const naturalHeight = img.naturalHeight;
+                
+                // Get displayed dimensions
+                const displayedWidth = img.width;
+                const displayedHeight = img.height;
+                
+                // Calculate scale factors
+                const scaleX = displayedWidth / naturalWidth;
+                const scaleY = displayedHeight / naturalHeight;
+                
+                // Get all area elements
+                const areas = map.querySelectorAll('area');
+                
+                areas.forEach(area => {
+                    // Store original coords if not already stored
+                    if (!area.dataset.coords) {
+                        area.dataset.coords = area.getAttribute('coords');
+                    }
+                    
+                    // Get original coordinates
+                    const coords = area.dataset.coords.split(',');
+                    
+                    // Scale coordinates
+                    const scaledCoords = coords.map((coord, index) => {
+                        const scale = index % 2 === 0 ? scaleX : scaleY;
+                        return Math.round(coord * scale);
+                    });
+                    
+                    // Update area coordinates
+                    area.setAttribute('coords', scaledCoords.join(','));
+                });
+            }
+            
+            // Run on load
+            window.addEventListener('load', resizeMap);
+            
+            // Run on resize
+            window.addEventListener('resize', resizeMap);
+            
+            // Also run after a short delay to catch slow-loading images
+            setTimeout(resizeMap, 100);
+        })();
+    </script>
 </body>
 </html>
