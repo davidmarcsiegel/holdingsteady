@@ -109,6 +109,22 @@
             background: #dde8ec;
         }
 
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .links-grid .primary {
+            grid-column: 1 / -1; /* Spans full width */
+        }
+
+        @media (min-width: 600px) {
+            .links-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+            }
+        }
+
         .footer {
             text-align: center;
             padding: 2rem 1rem;
@@ -171,7 +187,7 @@
             <p style="margin-top: 1rem; font-style: italic;">This group meets virtually via Zoom, welcoming participants from anywhere.</p>
         </div>
         
-        <div class="links">
+        <div class="links links-grid">
             <a class="primary" href="https://forms.google.com">📝 Sign up for more information</a>
             <a class="secondary" href="https://www.laurenfinkelsteintherapy.com">👤 About Lauren Finkelstein, LMFT</a>
             <a class="secondary" href="https://lrossitherapy.com">👤 About Letizia Rossi, LCSW</a>
