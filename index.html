@@ -28,16 +28,14 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 0;
         }
         
         .flyer-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: transparent;
+            padding: 0;
             margin-bottom: 2rem;
         }
         
@@ -45,7 +43,6 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 4px;
         }
         
         .description {
@@ -96,14 +93,15 @@
         
         /* Mobile optimizations */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem 0.75rem;
+            .flyer-container {
+                margin-bottom: 1rem;
             }
             
-            .flyer-container,
             .description,
             .links {
                 padding: 1.5rem;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
             }
             
             .links a {
@@ -122,17 +120,11 @@
                 IMAGE MAP INSTRUCTIONS:
                 1. Go to https://www.image-map.net/
                 2. Upload perimenopause-flyer.png
-                3. Draw rectangles around:
-                   - The "Group starting in Winter 2025" bubble (for signup link)
-                   - Lauren's name/info in bottom left
-                   - Letizia's name/info in bottom right
+                3. Draw rectangles around the three clickable areas
                 4. Add the URLs for each rectangle
                 5. Click "Show Me The Code"
-                6. Replace the <!-- IMAGE MAP CODE GOES HERE --> section below with the generated code
+                6. Replace the placeholder <map> section below with the generated code
             -->
-            
-            <!-- IMAGE MAP CODE GOES HERE -->
-            <!-- After you create the image map, paste it here and remove this comment -->
             
             <img src="perimenopause-flyer.png" 
                  alt="Holding Steady in the Waves - A perimenopause support group starting Winter 2025, Mondays at 6pm online, 6 sessions for $65 per session, co-led by Lauren Finkelstein, LMFT and Letizia Rossi, LCSW" 
