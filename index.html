@@ -47,27 +47,6 @@
             margin: 0 auto;
         }
 
-        .cta-button {
-            max-width: 800px;
-            margin: 1.5rem auto;
-            text-align: center;
-        }
-
-        .cta-button a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #4A7C8C;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
-        }
-
-        .cta-button a:hover {
-            background: #3a6273;
-        }
-
         .description {
             background: white;
             padding: 2rem;
@@ -138,7 +117,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 0.75rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             background: transparent;
             padding: 0;
             box-shadow: none;
@@ -146,18 +125,15 @@
 
         .links-grid a {
             min-height: 60px;
-            height: 60px;
+            height: 60px; /* Force exact height, not just minimum */
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem;
+            padding: 0.75rem; /* Consistent padding */
         }
 
-        @media (min-width: 600px) {
-            .links-grid {
-                grid-template-columns: 1fr 1fr;
-                align-items: stretch;
-            }
+        .links-grid .primary {
+            grid-column: 1 / -1; /* Spans full width */
         }
 
         @media (min-width: 600px) {
@@ -221,16 +197,12 @@
             </map>
         </div>
         
-        <!-- Sign up button above description -->
-        <div class="cta-button">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2NmhHmAgtR9sNPgjG8uUUQR6iIpueJPKIqQ7ZzXkb0Qbidw/viewform">📝 Sign up for more information</a>
-        </div>
-
         <div class="description">
             <p>This group offers supportive and collaborative space for individuals navigating perimenopause. Together we will process feelings of overwhelm, confusion, hope, and uncertainty as we explore what it means to enter this new stage of life while being heavily marketed to and with so many strong opinions about how to "optimize" this moment. Whether you are a perimenopause expert or someone just moving through this stage with curiosity, together we will meet, laugh, and commiserate and hopefully, find greater space for self kindness, too.</p>
             <p style="margin-top: 1rem; font-style: italic;">This group meets virtually via Zoom, welcoming participants from anywhere.</p>
-
-            <div class="links-grid">
+        
+            <div class="links links-grid">
+                <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc2NmhHmAgtR9sNPgjG8uUUQR6iIpueJPKIqQ7ZzXkb0Qbidw/viewform">📝 Sign up for more information</a>
                 <a class="secondary" href="https://www.laurenfinkelsteintherapy.com">👤 About Lauren Finkelstein, LMFT</a>
                 <a class="secondary" href="https://lrossitherapy.com">👤 About Letizia Rossi, LCSW</a>
             </div>
